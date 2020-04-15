@@ -1,0 +1,60 @@
+$heart-size: 16px;
+$avatar-size: 32px;
+
+.card {
+  background-color: white;
+  margin: 16px 0;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  &_heart {
+    display: flex;
+
+    img {
+      width: $heart-size;
+      height: $heart-size;
+    }
+
+    span {
+      margin-left: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $primary-color;
+      line-height: $heart-size;
+    }
+  }
+
+  &_detail {
+    padding-top: 12px;
+    cursor: pointer;
+    display: flex;
+    font-size: 10px;
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-right: 8px;
+    }
+  }
+
+  &_content {
+    padding: 16px 16px;
+  }
+
+  &_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
