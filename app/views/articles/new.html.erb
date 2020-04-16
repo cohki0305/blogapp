@@ -1,5 +1,15 @@
 <div class="container">
-  <%= form_with(model: @article, url: articles_path, method: 'post') do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with(model: @article, local: true, url: articles_path, method: 'post') do |f| %>
     <div>
       <%= f.label :title, 'タイトル' %>
     </div>
