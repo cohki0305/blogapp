@@ -6,12 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Article.create(
-  title: 'プログラミングの極意',
-  content: 'いっぱい勉強する'
-)
-
-Article.create(
-  title: 'プログラマーに転職する方法',
-  content: 'いっぱい勉強する'
-)
+10.times do
+  Article.create(
+    title: Faker::Lorem.sentence(word_count: [3, 4, 5].sample),
+    content: Faker::Lorem.sentence(word_count: (100..130).to_a.sample)
+  )
+end
