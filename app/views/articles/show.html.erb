@@ -10,7 +10,7 @@
       <div class="dropdown">
         <%= image_tag 'actions.svg', class: 'dropbtn' %>
         <div class="dropdown-content mini">
-          <a href="#">編集する</a>
+          <%= link_to '編集する', edit_article_path(@article) %>
         </div>
       </div>
     </div>
