@@ -6,6 +6,14 @@
       <p>cohki0305</p>
       <p>2020/4/16</p>
     </div>
+    <div class="article_detail_actions">
+      <div class="dropdown">
+        <%= image_tag 'actions.svg', class: 'dropbtn' %>
+        <div class="dropdown-content mini">
+          <a href="#">編集する</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="article_content">
     <%= @article.content %>
