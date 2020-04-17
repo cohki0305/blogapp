@@ -14,6 +14,9 @@ $header-padding-y: 16px;
     color: white;
     line-height: $avatar-size;
     font-size: $font-lg;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &_avatar {

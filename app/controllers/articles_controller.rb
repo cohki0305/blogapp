@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @title = @article.title
   end
 
   def new
