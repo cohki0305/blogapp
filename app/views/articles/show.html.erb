@@ -4,7 +4,7 @@
     <%= image_tag 'default-avatar.png' %>
     <div>
       <p>cohki0305</p>
-      <p>2020/4/16</p>
+      <p><%= I18n.l(@article.created_at, format: :default) %></p>
     </div>
     <div class="article_detail_actions">
       <div class="dropdown">
