@@ -14,15 +14,21 @@ $avatar-size: 32px;
 
   &_detail {
     padding-top: 10px;
-    cursor: pointer;
     display: flex;
     font-size: 12px;
+    position: relative;
 
     img {
+      cursor: pointer;
       width: $avatar-size;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 16px;
+    }
+
+    &_actions {
+      right: 0px;
+      position: absolute;
     }
   }
 
