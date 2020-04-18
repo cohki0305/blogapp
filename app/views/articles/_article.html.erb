@@ -1,0 +1,23 @@
+<%= link_to article_path(article) do %>
+  <div class="card">
+    <div class="card_image">
+      <%= image_tag 'eyecatch1.png' %>
+    </div>
+    <div class="card_content">
+      <div class="card_title">
+        <%= article.title %>
+      </div>
+      <div class="card_heart">
+        <%= image_tag 'heart.svg' %>
+        <span>23</span>
+      </div>
+      <div class="card_detail">
+        <%= image_tag 'default-avatar.png' %>
+        <div>
+          <p>cohki0305</p>
+          <p><%= article.display_created_at %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
