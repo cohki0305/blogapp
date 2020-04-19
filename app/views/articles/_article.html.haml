@@ -1,0 +1,15 @@
+= link_to article_path(article) do
+  .card
+    .card_image
+      = image_tag 'eyecatch1.png'
+    .card_content
+      .card_title
+        = article.title
+      .card_heart
+        = image_tag 'heart.svg'
+        %span 23
+      .card_detail
+        = image_tag 'default-avatar.png'
+        %div
+          %p cohki0305
+          %p= article.display_created_at
