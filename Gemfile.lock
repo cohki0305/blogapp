@@ -62,7 +62,13 @@ GEM
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.0)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -79,6 +85,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    debug_inspector (0.0.3)
     erb2haml (0.1.5)
       html2haml
     erubi (1.9.0)
@@ -250,6 +257,8 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
