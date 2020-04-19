@@ -1,38 +1,10 @@
 <div class="container">
-  <div class="tabs">
-    <div class="tabs_item active">
-      新着記事一覧
-    </div>
-    <div class="tabs_item">
-      タイムライン
-    </div>
-  </div>
+  <%= render 'tabs' %>
 
   <% @articles.each do |article| %>
-    <%= link_to article_path(article) do %>
-      <div class="card">
-        <div class="card_image">
-          <%= image_tag 'eyecatch1.png' %>
-        </div>
-        <div class="card_content">
-          <div class="card_title">
-            <%= article.title %>
-          </div>
-          <div class="card_heart">
-            <%= image_tag 'heart.svg' %>
-            <span>23</span>
-          </div>
-          <div class="card_detail">
-            <%= image_tag 'default-avatar.png' %>
-            <div>
-              <p>cohki0305</p>
-              <p>2020/4/16</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'article', article: article %>
   <% end %>
+
   <%= link_to new_article_path do %>
     <div class="float_btn">
       <i class="fa fa-plus"></i>

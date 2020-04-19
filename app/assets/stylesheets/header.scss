@@ -2,6 +2,7 @@
 
 $avatar-size: 40px;
 $header-padding-y: 16px;
+$back-icon-size: 16px;
 
 .header {
   display: flex;
@@ -9,6 +10,18 @@ $header-padding-y: 16px;
   background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      cursor: pointer;
+      width: $back-icon-size;
+      height: $back-icon-size;
+      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    }
+  }
 
   &_pageTitle {
     color: white;
