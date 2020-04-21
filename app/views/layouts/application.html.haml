@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BlogApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+  %body
+    %header.header
+      .header_logos
+        - if !current_page?(root_path)
+          = link_to :back do
+            = image_tag 'back.svg', class: 'header_back'
+        %p.header_pageTitle BlogApp
+      .dropdown
+        = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
+        .dropdown-content
+          %a{:href => "#"} プロフィール
+          %a{:href => "#"} ログアウト
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
+    = yield
