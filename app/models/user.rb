@@ -23,4 +23,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles, dependent: :destroy
+
+  def display_name
+    self.email.split('@').first
+  end
 end
