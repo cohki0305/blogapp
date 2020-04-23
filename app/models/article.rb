@@ -25,6 +25,7 @@ class Article < ApplicationRecord
   validate :validate_title_and_content_length
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   def display_created_at
     I18n.l(self.created_at, format: :default)
