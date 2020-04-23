@@ -5,12 +5,13 @@
     %div
       %p cohki0305
       %p= @article.display_created_at
-    .article_detail_actions
-      .dropdown
-        = image_tag 'actions.svg', class: 'dropbtn'
-        .dropdown-content.mini
-          = link_to '編集する', edit_article_path(@article)
-          = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+    - if user_signed_in?
+      .article_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_article_path(@article)
+            = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .article_content
     = @article.content
   .article_heart
