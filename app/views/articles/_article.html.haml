@@ -11,6 +11,5 @@
       .card_detail
         = image_tag 'default-avatar.png'
         %div
-          - if article.user.present?
-            %p= article.user.display_name
+          %p= article.author_name
           %p= article.display_created_at
