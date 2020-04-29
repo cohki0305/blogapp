@@ -16,3 +16,8 @@
     = @article.content
   .article_heart
     = image_tag 'heart.svg'
+
+.container
+  = link_to new_article_comment_path(@article) do
+    .btn-secondary
+      コメントを追加
