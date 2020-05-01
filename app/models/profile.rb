@@ -19,4 +19,15 @@
 class Profile < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   belongs_to :user
+
+  def age
+    years  = Time.zone.now.year - birthday.year
+    days = Time.zone.now.yday - birthday.yday
+
+    if days < 0
+      years - 1
+    else
+      years
+    end
+  end
 end
