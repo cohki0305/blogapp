@@ -1,4 +1,6 @@
-input {
+@import './variables';
+
+input, select {
   &.text {
     width: 100%;
     margin: 8px 0px;
