@@ -33,6 +33,14 @@ class User < ApplicationRecord
     profile&.nickname || self.email.split('@').first
   end
 
+  def age
+    profile&.age
+  end
+
+  def gender
+    profile&.gender
+  end
+
   def prepare_profile
     profile || build_profile
   end
