@@ -5,11 +5,11 @@
     .profilePage_user_basicInfo
       .profilePage_user_name
         .profilePage_user_displayName
-          = current_user.display_name
+          #{current_user.display_name}（#{current_user.birthday}・#{current_user.gender}）
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
       .profilePage_user_introduction
-        あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        = current_user.profile&.introduction
 
   - current_user.articles.each do |article|
     = render 'commons/article', article: article
