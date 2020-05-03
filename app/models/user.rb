@@ -40,6 +40,10 @@ class User < ApplicationRecord
     end
   end
 
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
+  end
+
   def display_name
     profile&.nickname || self.email.split('@').first
   end
