@@ -36,6 +36,9 @@ $back-icon-size: 16px;
     color: white;
     line-height: $avatar-size;
     font-size: $font-lg;
+    a {
+      color: white;
+    }
   }
 
   &_avatar {
