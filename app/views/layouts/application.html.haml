@@ -18,9 +18,9 @@
         %p.header_pageTitle BlogApp
       - if user_signed_in?
         .dropdown
-          = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
+          = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
           .dropdown-content
-            %a{:href => "#"} プロフィール
+            = link_to 'プロフィール', profile_path
             = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
       - else
         = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
