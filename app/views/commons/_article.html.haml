@@ -1,13 +1,14 @@
 = link_to article_path(article) do
   .card
-    .card_image
-      = image_tag 'eyecatch1.png'
+    - if article.eyecatch.attached?
+      .card_image
+        = image_tag article.eyecatch
     .card_content
       .card_title
         = article.title
       .card_heart
         = image_tag 'heart.svg'
-        %span 23
+        %span= article.like_count
       .card_detail
         = image_tag article.user.avatar_image
         %div

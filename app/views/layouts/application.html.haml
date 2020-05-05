@@ -15,12 +15,14 @@
         - if !current_page?(root_path)
           = link_to :back do
             = image_tag 'back.svg', class: 'header_back'
-        %p.header_pageTitle BlogApp
+        %p.header_pageTitle
+          = link_to 'BlogApp', root_path
       - if user_signed_in?
         .dropdown
           = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
           .dropdown-content
             = link_to 'プロフィール', profile_path
+            = link_to 'お気に入り', favorites_path
             = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
       - else
         = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'

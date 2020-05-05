@@ -1,12 +1,30 @@
 $heart-size: 32px;
 $avatar-size: 32px;
+$container-padding: 16px;
 
 .article {
   background-color: white;
   margin: 16px 16px;
-  padding: 16px 16px;
+  padding: $container-padding $container-padding;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
+
+  &_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin: $container-padding * -1 $container-padding * -1 16px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
 
   h2 {
     font-size: 16px;

@@ -1,4 +1,7 @@
 .article
+  - if @article.eyecatch.attached?
+    .article_image
+      = image_tag @article.eyecatch
   %h1.article_title= @article.title
   .article_detail
     = image_tag @article.user.avatar_image
@@ -14,8 +17,15 @@
             = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .article_content
     = @article.content
-  .article_heart
-    = image_tag 'heart.svg'
+  - if user_signed_in?
+    - if current_user.has_liked?(@article)
+      .article_heart
+        = link_to article_like_path(@article), data: { method: 'delete' } do
+          = image_tag 'heart-active.svg'
+    - else
+      .article_heart
+        = link_to article_like_path(@article), data: { method: 'post' } do
+          = image_tag 'heart.svg'
 
 .article
   %h2 コメント一覧
