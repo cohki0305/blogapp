@@ -1,7 +1,7 @@
 .tabs
-  .tabs_item{class: "#{'active' if current_page?(root_path)}"}
+  .tabs_item{class: "#{add_active_class(root_path)}"}
     = link_to root_path do
       新着記事一覧
-  .tabs_item{class: "#{'active' if current_page?(timeline_path)}"}
+  .tabs_item{class: "#{add_active_class(timeline_path)}"}
     = link_to timeline_path do
       タイムライン
