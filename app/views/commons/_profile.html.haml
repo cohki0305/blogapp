@@ -11,9 +11,12 @@
             = link_to 'Edit', edit_profile_path
         - else
           .profilePage_user_actionButton
-            = link_to 'Follow', edit_profile_path
+            - if current_user&.has_followed?(user)
+              %p フォロー済み
+            - else
+              = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
       .profilePage_user_introduction
-        = current_user.profile&.introduction
+        = user.profile&.introduction
 
   - user.articles.each do |article|
     = render 'commons/article', article: article
