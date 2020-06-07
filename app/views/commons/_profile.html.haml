@@ -1,0 +1,18 @@
+.container.profilePage
+  .profilePage_user
+    .profilePage_user_image
+      = image_tag user.avatar_image
+    .profilePage_user_basicInfo
+      .profilePage_user_name
+        .profilePage_user_displayName
+          #{user.display_name}（#{user.age || '？歳'}・#{I18n.t("enum.genders.#{user.gender || 'unknown'}")}）
+        .profilePage_user_actionButton
+          - if user == current_user
+            = link_to 'Edit', edit_profile_path
+          - else
+            = link_to 'Follow', '#'
+      .profilePage_user_introduction
+        = user.profile&.introduction
+
+  - user.articles.each do |article|
+    = render 'commons/article', article: article
