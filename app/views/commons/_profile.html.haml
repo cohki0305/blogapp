@@ -11,7 +11,7 @@
             = link_to 'Edit', edit_profile_path
           - else
             - if current_user&.has_followed?(user)
-              %p フォロー済み
+              = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
             - else
               = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
       .profilePage_user_introduction
