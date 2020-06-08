@@ -1,0 +1,21 @@
+.container.profilePage
+  .profilePage_user
+    .profilePage_user_image
+      = image_tag user.avatar_image
+    .profilePage_user_basicInfo
+      .profilePage_user_name
+        .profilePage_user_displayName
+          #{user.display_name}（#{user.age || '？歳'}・#{I18n.t("enum.genders.#{user.gender || 'unknown'}")}）
+        .profilePage_user_actionButton
+          - if user == current_user
+            = link_to 'Edit', edit_profile_path
+          - else
+            - if current_user&.has_followed?(user)
+              = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
+            - else
+              = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
+      .profilePage_user_introduction
+        = user.profile&.introduction
+
+  - user.articles.each do |article|
+    = render 'commons/article', article: article
