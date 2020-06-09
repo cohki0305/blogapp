@@ -27,6 +27,11 @@ document.addEventListener('turbolinks:load', () => {
   const articleId = dataset.articleId
   axios.get(`/articles/${articleId}/like`)
     .then((response) => {
-      console.log(response)
+      const hasLiked = response.data.hasLiked
+      if (hasLiked) {
+        $('.active_heart').removeClass('hidden')
+      } else {
+        $('.inactive_heart').removeClass('hidden')
+      }
     })
 })
