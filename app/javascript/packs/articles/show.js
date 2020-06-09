@@ -57,4 +57,9 @@ document.addEventListener('turbolinks:load', () => {
         )
       })
     })
+
+  $('.show-comment-form').on('click', () => {
+    $('.show-comment-form').addClass('hidden')
+    $('.comment-text-area').removeClass('hidden')
+  })
 })
