@@ -47,4 +47,14 @@ document.addEventListener('turbolinks:load', () => {
         window.alert('error')
       })
   })
+
+  axios.get(`/articles/${articleId}/comments`)
+    .then((res) => {
+      const comments = res.data
+      comments.forEach((comment) => {
+        $('.comments-container').append(
+          `<div class="article_comment"><p>${comment.content}</p></div>`
+        )
+      })
+    })
 })
