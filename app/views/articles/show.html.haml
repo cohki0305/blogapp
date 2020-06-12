@@ -20,11 +20,9 @@
     = @article.content
   - if user_signed_in?
     .article_heart.hidden.active-heart
-      = link_to article_like_path(@article), data: { method: 'delete' } do
-        = image_tag 'heart-active.svg'
+      = image_tag 'heart-active.svg'
     .article_heart.hidden.inactive-heart
-      = link_to article_like_path(@article), data: { method: 'post' } do
-        = image_tag 'heart.svg'
+      = image_tag 'heart.svg'
 
 .article
   %h2 コメント一覧
