@@ -29,7 +29,10 @@
   .comments-container
 
 .container
-  = link_to new_article_comment_path(@article) do
+  .btn-secondary.show-comment-form
+    コメントを追加
+  .comment-text-area.hidden
+    = text_area_tag :comment_content, '', class: 'sm'
     .btn-secondary
       コメントを追加
 
