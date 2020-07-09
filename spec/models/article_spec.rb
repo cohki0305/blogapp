@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, email: 'cohki0305@gmail.com') }
 
   context '2文字以上のタイトルと記事内容の場合' do
     let!(:article) do
@@ -12,6 +12,9 @@ RSpec.describe Article, type: :model do
     end
 
     it '記事を保存できる' do
+      puts '--------------'
+      puts user.email
+      puts '--------------'
       expect(article).to be_valid
     end
   end
