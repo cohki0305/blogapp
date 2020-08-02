@@ -7,7 +7,7 @@ RSpec.describe 'Article', type: :system do
   it '記事一覧がひょうじされる' do
     visit root_path
     articles.each do |article|
-      expect(page).to have_content(article.title)
+      expect(page).to have_css('.card_title', text: article.title)
     end
   end
 end
